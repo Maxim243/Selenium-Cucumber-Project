@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="27" total="28" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-04-11T17:27:57 EEST" name="Default Suite" finished-at="2023-04-11T17:28:09 EEST" duration-ms="11249">
+    <groups>
+    </groups>
+    <test started-at="2023-04-11T17:27:57 EEST" name="SeleniumProject" finished-at="2023-04-11T17:28:09 EEST" duration-ms="11249">
+      <class name="org.example.tests.HomePageTestCases">
+        <test-method is-config="true" signature="beforeImplementation()[pri:0, instance:org.example.tests.HomePageTestCases@4b44655e]" started-at="2023-04-11T17:27:57 EEST" name="beforeImplementation" finished-at="2023-04-11T17:28:00 EEST" duration-ms="2344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeImplementation -->
+        <test-method signature="getCurrencyByValueRange()[pri:0, instance:org.example.tests.HomePageTestCases@4b44655e]" started-at="2023-04-11T17:28:00 EEST" name="getCurrencyByValueRange" description="Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(4)" finished-at="2023-04-11T17:28:09 EEST" duration-ms="8758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCurrencyByValueRange -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:org.example.tests.HomePageTestCases@4b44655e]" started-at="2023-04-11T17:28:09 EEST" name="quit" finished-at="2023-04-11T17:28:09 EEST" duration-ms="98" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- org.example.tests.HomePageTestCases -->
+    </test> <!-- SeleniumProject -->
+  </suite> <!-- Default Suite -->
+</testng-results>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/md_mkorsakov/IdeaProjects/SeleniumProject/src/test/java/org/example/tests/HomePageTestCases.java">
+        <classes>
+            <class name="org.example.tests.HomePageTestCases">
+                <methods>
+                    <include name="currencyNominal"/>
+                    <include name="oldFromDateCurrency"/>
+                    <include name="futureToDateCurrency"/>
+                    <include name="oldToDateCurrency"/>
+                    <include name="futureFromDateCurrency"/>
+                    <include name="defaultFromDateCurrency"/>
+                    <include name="validFromDateCurrency"/>
+                    <include name="defaultToDate"/>
+                    <include name="verify60Dates"/>
+                    <include name="verifyGetCurrencyRatesNotSpecifiedCharCode"/>
+                    <include name="verifyGetCurrencyRatesWithSpecifiedCharCode"/>
+                    <include name="invalidCharCodeSpecified"/>
+                    <include name="charCodeCase"/>
+                    <include name="getCharCodesWhenCurrencyNameIsNotSpecified"/>
+                    <include name="getCharCodesWithCurrencyNameSpecified"/>
+                    <include name="invalidCurrencyNames"/>
+                    <include name="getCurrencyInSelectedLanguage"/>
+                    <include name="getCurrencyWithUpperAndLowerCase"/>
+                    <include name="getCurrencyWithEmptyValueField"/>
+                    <include name="getCurrencyValuesBySpecifiedFromInput"/>
+                    <include name="getCurrencyValuesNegative"/>
+                    <include name="getCurrencyByValueRange"/>
+                    <include name="getCurrentValueToNegative"/>
+                    <include name="verifyLanguage"/>
+                    <include name="getCurrencyMismatchCurrencyNameAndCode"/>
+                    <include name="getErrorMessageWhenOnlyLanguageIsSpecified"/>
+                    <include name="getCurrencyRates"/>
+                    <include name="logInAndLogOutWithTheSameCredentials"/>
+                    <include name="unregister"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
