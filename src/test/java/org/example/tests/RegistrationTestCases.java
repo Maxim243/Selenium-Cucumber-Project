@@ -30,15 +30,12 @@ public class RegistrationTestCases {
         File chromeDriver = new File("drivers/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", chromeDriver.getAbsolutePath());
         driver = new ChromeDriver();
-        Reporter.log("Browser Opened");
         driver.get(PropertyReader.getProperty("bnm.url.registration"));
         driver.manage().window().maximize();
-        Reporter.log("Browser Maximized");
         webDriverWait = new WebDriverWait(driver, 10);
         EnvironmentPage environmentPage = new EnvironmentPage(driver);
         environmentPage.enterEnvironmentPage();
         craRegistrationPage = new CRARegistrationPage(driver);
-        Reporter.log("Application started");
     }
 
 

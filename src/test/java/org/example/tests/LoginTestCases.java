@@ -14,6 +14,7 @@ import org.testng.annotations.*;
 
 import java.io.File;
 
+import static org.example.tests.HomePageTestCases.webDriverWait;
 import static org.example.utils.UtilMethods.waitUntilElementIsDisplayed;
 
 public class LoginTestCases {
@@ -55,7 +56,7 @@ public class LoginTestCases {
         return new Object[][]{{"John1234", "Maxim156"}};
     }
 
-    @Test(dataProvider = "existingUser")
+    @Test(dataProvider = "existingUser", priority = 1)
     public void loginAnExistingUser(String name, String password) {
         waitUntilElementIsDisplayed(By.xpath(registrationTitleString));
         craRegistrationPage.sendingNameAndPassword(name, password);
@@ -64,7 +65,7 @@ public class LoginTestCases {
         Assert.assertTrue(driver.findElement(By.id("unregisterButton")).isDisplayed());
     }
 
-    @Test(dataProvider = "newLoginAndPassword")
+    @Test(dataProvider = "newLoginAndPassword", priority = 2)
     public void loginWithNewCredentials(String name, String password) {
         waitUntilElementIsDisplayed(By.xpath(registrationTitleString));
         craRegistrationPage.sendingNameAndPassword(name, password);
@@ -73,7 +74,7 @@ public class LoginTestCases {
         Assert.assertTrue(driver.findElement(By.xpath("//strong[text() ='Login failed!']")).isDisplayed());
     }
 
-    @Test(dataProvider = "existingUsernameAndWrongPassword")
+    @Test(dataProvider = "existingUsernameAndWrongPassword", priority = 3)
     public void loginWithAnExistingUsernameAndWrongPassword(String name, String password) {
         waitUntilElementIsDisplayed(By.xpath(registrationTitleString));
         craRegistrationPage.sendingNameAndPassword(name, password);
@@ -86,5 +87,4 @@ public class LoginTestCases {
     public void exit() {
         driver.quit();
     }
-
 }

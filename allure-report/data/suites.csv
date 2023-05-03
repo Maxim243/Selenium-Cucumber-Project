@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","","","1281","","org.example.tests.LoginTestCases","","org.example.tests.LoginTestCases","","loginWithNewCredentials[Maxim123, Maxim156](1)",""
+"passed","","","1282","","org.example.tests.LoginTestCases","","org.example.tests.LoginTestCases","","loginAnExistingUser[John1234, John1234](1)",""
+"passed","","","1238","","org.example.tests.LoginTestCases","","org.example.tests.LoginTestCases","","loginWithAnExistingUsernameAndWrongPassword[John1234, Maxim156](1)",""

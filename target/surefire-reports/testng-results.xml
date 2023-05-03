@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Browser Opened]]>
+    </line>
+    <line>
+      <![CDATA[Browser Maximized]]>
+    </line>
+    <line>
+      <![CDATA[Browser Opened]]>
+    </line>
+    <line>
+      <![CDATA[Browser Maximized]]>
+    </line>
+    <line>
+      <![CDATA[Browser Opened]]>
+    </line>
+    <line>
+      <![CDATA[Browser Maximized]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-04-11T20:32:52 EEST" name="Surefire suite" finished-at="2023-04-11T20:33:00 EEST" duration-ms="8314">
+    <groups>
+    </groups>
+    <test started-at="2023-04-11T20:32:52 EEST" name="Surefire test" finished-at="2023-04-11T20:33:00 EEST" duration-ms="8314">
+      <class name="org.example.tests.LoginTestCases">
+        <test-method is-config="true" signature="beforeImplementation()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:52 EEST" name="beforeImplementation" finished-at="2023-04-11T20:32:54 EEST" duration-ms="1749" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser Opened]]>
+            </line>
+            <line>
+              <![CDATA[Browser Maximized]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeImplementation -->
+        <test-method signature="loginAnExistingUser(java.lang.String,java.lang.String)[pri:1, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:54 EEST" name="loginAnExistingUser" data-provider="existingUser" finished-at="2023-04-11T20:32:55 EEST" duration-ms="1282" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[John1234]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[John1234]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginAnExistingUser -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:55 EEST" name="exit" finished-at="2023-04-11T20:32:55 EEST" duration-ms="128" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+        <test-method is-config="true" signature="beforeImplementation()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:55 EEST" name="beforeImplementation" finished-at="2023-04-11T20:32:56 EEST" duration-ms="1133" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser Opened]]>
+            </line>
+            <line>
+              <![CDATA[Browser Maximized]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeImplementation -->
+        <test-method signature="loginWithNewCredentials(java.lang.String,java.lang.String)[pri:2, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:56 EEST" name="loginWithNewCredentials" data-provider="newLoginAndPassword" finished-at="2023-04-11T20:32:57 EEST" duration-ms="1281" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Maxim123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Maxim156]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithNewCredentials -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:57 EEST" name="exit" finished-at="2023-04-11T20:32:58 EEST" duration-ms="104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+        <test-method is-config="true" signature="beforeImplementation()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:58 EEST" name="beforeImplementation" finished-at="2023-04-11T20:32:59 EEST" duration-ms="1263" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Browser Opened]]>
+            </line>
+            <line>
+              <![CDATA[Browser Maximized]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeImplementation -->
+        <test-method signature="loginWithAnExistingUsernameAndWrongPassword(java.lang.String,java.lang.String)[pri:3, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:32:59 EEST" name="loginWithAnExistingUsernameAndWrongPassword" data-provider="existingUsernameAndWrongPassword" finished-at="2023-04-11T20:33:00 EEST" duration-ms="1239" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[John1234]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Maxim156]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithAnExistingUsernameAndWrongPassword -->
+        <test-method is-config="true" signature="exit()[pri:0, instance:org.example.tests.LoginTestCases@4fe767f3]" started-at="2023-04-11T20:33:00 EEST" name="exit" finished-at="2023-04-11T20:33:00 EEST" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- exit -->
+      </class> <!-- org.example.tests.LoginTestCases -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

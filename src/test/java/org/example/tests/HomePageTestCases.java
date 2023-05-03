@@ -22,7 +22,9 @@ import java.util.List;
 
 import static org.example.pomCRA.HomePageCRA.*;
 import static org.example.utils.UtilMethods.waitUntilElementIsDisplayed;
-
+// allure generate --clean    fullpath to surefire
+// mvn clean test -Dtest=HomePageTestCases
+//  allure generate --clean C:\Users\md_mkorsakov\IdeaProjects\SeleniumProject\target\surefire-reports
 public class HomePageTestCases {
 
     private static WebDriver driver;
@@ -62,7 +64,7 @@ public class HomePageTestCases {
         craRegistrationPage.clickLogInButton();
     }
 
-    @Test(description = "If currency nominal is not 1, it should be set to 1 and currency value should be recalculated accordingly. HOMRTS-001.1")
+    @Test(description = "If currency nominal is not 1, it should be set to 1 and currency value should be recalculated accordingly. HOMRTS-001.1", priority = 1)
     public void currencyNominal() {
         double min = 0.05;
         double max = 0.07;
@@ -90,7 +92,7 @@ public class HomePageTestCases {
 
 
     //test failed (bug) - getting an error status code 500
-    @Test(description = "Verify if user specified the 'From' date older than 01.01.1994 error message is displayed. HOMRTS-002(1)")
+    @Test(description = "Verify if user specified the 'From' date older than 01.01.1994 error message is displayed. HOMRTS-002(1)", priority = 2)
     public void oldFromDateCurrency() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterFromDateCurrencyRates(oldDate);
@@ -100,7 +102,7 @@ public class HomePageTestCases {
     }
 
     //test failed (bug) - getting an incorrect date
-    @Test(description = "Verify if 'From date' is set by default. HOMRTS-002(2)")
+    @Test(description = "Verify if 'From date' is set by default. HOMRTS-002(2)", priority = 3)
     public void futureToDateCurrency() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterToDateCurrencyRates(futureDate);
@@ -110,7 +112,7 @@ public class HomePageTestCases {
     }
 
     //test failed (bug) - getting an error 500 status code
-    @Test(description = "Verify if user specified the 'To' date older than 01.01.1994 error message is displayed. HOMRTS-002(3)")
+    @Test(description = "Verify if user specified the 'To' date older than 01.01.1994 error message is displayed. HOMRTS-002(3)", priority = 4)
     public void oldToDateCurrency() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterToDateCurrencyRates(oldDate);
@@ -120,7 +122,7 @@ public class HomePageTestCases {
     }
 
 
-    @Test(description = "Verify if user specified the 'From' date  greater than current date error message is displayed. HOMRTS-002(4)")
+    @Test(description = "Verify if user specified the 'From' date  greater than current date error message is displayed. HOMRTS-002(4)", priority = 5)
     public void futureFromDateCurrency() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterFromDateCurrencyRates(futureDate);
@@ -129,7 +131,7 @@ public class HomePageTestCases {
         Assert.assertEquals(homePageCRA.verifyDateFutureError(futureDate), driver.findElement(By.id("onGetCurrencyRatesFailAlert")).getText());
     }
 
-    @Test(description = "Verify if 'From date' is set by default. HOMRTS-002(5)")
+    @Test(description = "Verify if 'From date' is set by default. HOMRTS-002(5)", priority = 6)
     public void defaultFromDateCurrency() {
         String toDate = "01.01.2018";
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
@@ -145,7 +147,7 @@ public class HomePageTestCases {
 
 
     //    requirement - Currency rates are displayed(only displayed)
-    @Test(description = "Verify if user specified valid date currency rates are displayed. HOMRTS-002(6)")
+    @Test(description = "Verify if user specified valid date currency rates are displayed. HOMRTS-002(6)", priority = 7)
     public void validFromDateCurrency() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterFromDateCurrencyRates(fromDate);
@@ -155,7 +157,7 @@ public class HomePageTestCases {
     }
 
     //test failed (bug) - getting an error 500 status code
-    @Test(description = "Verify if 'To' date is set by default. HOMRTS-002(7)")
+    @Test(description = "Verify if 'To' date is set by default. HOMRTS-002(7)", priority = 8)
     public void defaultToDate() {
         LocalDate localDate = LocalDate.now();
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
@@ -166,7 +168,7 @@ public class HomePageTestCases {
     }
 
     //bug, we should get 60 dates = we get 59 dates
-    @Test(description = "Verify if only 60 dates are displayed. HOMRTS-002(8)")
+    @Test(description = "Verify if only 60 dates are displayed. HOMRTS-002(8)", priority = 9)
     public void verify60Dates() {
         String fromDate1 = "01.08.2018";
 
@@ -190,7 +192,7 @@ public class HomePageTestCases {
         Assert.assertEquals(dateList.get(dateList.size() - 1), (stringDate + dateString60Days));
     }
 
-    @Test(description = "Verify if user can get Currency rates when char codes are not specified. HOMRTS-003(1)")
+    @Test(description = "Verify if user can get Currency rates when char codes are not specified. HOMRTS-003(1)", priority = 10)
     public void verifyGetCurrencyRatesNotSpecifiedCharCode() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterFromDateCurrencyRates(fromDate);
@@ -204,7 +206,7 @@ public class HomePageTestCases {
     }
 
     //test failed (bug) - if we specify 2 Char Codes, records with the first char code specified - are displayed
-    @Test(description = "Verify if user can get Currency rates for valid char codes. HOMRTS-003(2)")
+    @Test(description = "Verify if user can get Currency rates for valid char codes. HOMRTS-003(2)", priority = 11)
     public void verifyGetCurrencyRatesWithSpecifiedCharCode() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterFromDateCurrencyRates(fromDate);
@@ -236,7 +238,7 @@ public class HomePageTestCases {
         Assert.assertEquals(dateList.get(dateList.size() - 1), stringDate + toDate);
     }
 
-    @Test(description = "Verify if user can not get Currency rates for invalid char codes HOMRTS-003(3)")
+    @Test(description = "Verify if user can not get Currency rates for invalid char codes HOMRTS-003(3)", priority = 12)
     public void invalidCharCodeSpecified() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharCodes("EURO");
@@ -251,7 +253,7 @@ public class HomePageTestCases {
         Assert.assertTrue(listOfWebElements2.isEmpty());
     }
 
-    @Test(description = "Verify if user can use both of cases HOMRTS-003.1")
+    @Test(description = "Verify if user can use both of cases HOMRTS-003.1", priority = 13)
     public void charCodeCase() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharCodes("EUR");
@@ -279,7 +281,7 @@ public class HomePageTestCases {
         Assert.assertTrue(euroAndcaDBoolean);
     }
 
-    @Test(description = "Verify if user can get Currency rates when currency names are not specified HOMRTS-004(1)")
+    @Test(description = "Verify if user can get Currency rates when currency names are not specified HOMRTS-004(1)", priority = 14)
     public void getCharCodesWhenCurrencyNameIsNotSpecified() {
         String datePlus30Days = formatter.format(localDate.plusMonths(1));
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
@@ -294,7 +296,7 @@ public class HomePageTestCases {
     }
 
     // bug, CRA does not include today's date
-    @Test(description = "Verify if user can get Currency rates for valid currency names HOMRTS-004(2)")
+    @Test(description = "Verify if user can get Currency rates for valid currency names HOMRTS-004(2)", priority = 15)
     public void getCharCodesWithCurrencyNameSpecified() {
         LocalDate localDate = LocalDate.now();
         String dateNow = formatter.format(localDate);
@@ -318,7 +320,7 @@ public class HomePageTestCases {
         Assert.assertTrue(charCodesList.contains("EUR") && charCodesList.contains("USD") && euroAndDollarBoolean);
     }
 
-    @Test(description = "Verify if user can get Curency rates for invalid currency names HOMRTS-004(3)")
+    @Test(description = "Verify if user can get Curency rates for invalid currency names HOMRTS-004(3)", priority = 16)
     public void invalidCurrencyNames() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharNameField("Eur");
@@ -343,7 +345,7 @@ public class HomePageTestCases {
 
 
     // no data is returned
-    @Test(description = "Verify if user can use both of cases HOMRTS-004.1")
+    @Test(description = "Verify if user can use both of cases HOMRTS-004.1", priority = 17)
     public void getCurrencyWithUpperAndLowerCase() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharNameField("EURO");
@@ -369,7 +371,7 @@ public class HomePageTestCases {
         Assert.assertTrue(charCodesList.contains("EUR") && charCodesList.contains("USD"));
     }
 
-    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(1)")
+    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(1)", priority = 18)
     public void getCurrencyWithEmptyValueField() {
         String dateString30Days = formatter.format(localDate.plusMonths(1));
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
@@ -383,7 +385,7 @@ public class HomePageTestCases {
         Assert.assertEquals(stringDate + dateString30Days, dateList.get(dateList.size() - 1));
     }
 
-    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(2)")
+    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(2)", priority = 19)
     public void getCurrencyValuesBySpecifiedFromInput() {
         String dateString30Days = formatter.format(localDate.plusMonths(1));
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
@@ -397,7 +399,7 @@ public class HomePageTestCases {
         Assert.assertEquals(stringDate + dateString30Days, dateList.get(dateList.size() - 1));
     }
 
-    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(3)")
+    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(3)", priority = 20)
     public void getCurrencyValuesNegative() {
         String invalidValueFrom1 = "-19.2";
         String invalidValueFrom2 = "*#%^";
@@ -415,7 +417,7 @@ public class HomePageTestCases {
     }
 
 
-    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(4)")
+    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(4)", priority = 21)
     public void getCurrencyByValueRange() {
         double min = 19.2;
         double max = 19.5;
@@ -453,7 +455,7 @@ public class HomePageTestCases {
                         || localDate1.equals(localDateFrom)));
     }
 
-    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(5)")
+    @Test(description = "Verify if user can filter currency values by specifiying currency values range. HOMRTS-005(5)", priority = 22)
     public void getCurrentValueToNegative() {
         double min = 19.2;
         double max = 19.5;
@@ -489,7 +491,7 @@ public class HomePageTestCases {
         Assert.assertEquals(homePageCRA.verifyCurrencyValue("a#$^"), driver.findElement(By.id("onGetCurrencyRatesFailAlert")).getText());
     }
 
-    @Test(description = "Verify if user can specify currency names in any available language.  HOMRTS-006(1)")
+    @Test(description = "Verify if user can specify currency names in any available language.  HOMRTS-006(1)", priority = 23)
     public void verifyLanguage() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharNameField("Euro");
@@ -497,8 +499,7 @@ public class HomePageTestCases {
         homePageCRA.getAllChars();
     }
 
-    @Test(description = "Verify if  user specified char code and currency names which does not correspond to each other. HOMRTS-007(1)")
-
+    @Test(description = "Verify if  user specified char code and currency names which does not correspond to each other. HOMRTS-007(1)", priority = 24)
     public void getCurrencyMismatchCurrencyNameAndCode() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterCharNameField("Euro");
@@ -508,7 +509,7 @@ public class HomePageTestCases {
         Assert.assertTrue(listOfWebElements2.isEmpty());
     }
 
-    @Test(description = "Verify if user gets error message if only English is entered in 'Language field. HOMRTS-008(1)")
+    @Test(description = "Verify if user gets error message if only English is entered in 'Language field. HOMRTS-008(1)", priority = 25)
     public void getErrorMessageWhenOnlyLanguageIsSpecified() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.enterLanguage("ru");
@@ -516,7 +517,7 @@ public class HomePageTestCases {
         Assert.assertEquals(homePageCRA.verifyLanguage(), driver.findElement(By.id("onGetCurrencyRatesFailAlert")).getText());
     }
 
-    @Test(description = "Verify if user introduces valid data he gets currency rates. HOMRTS-001(1)")
+    @Test(description = "Verify if user introduces valid data he gets currency rates. HOMRTS-001(1)", priority = 26)
     public void getCurrencyRates() {
         String dateString30Days = formatter.format(localDate.plusMonths(1));
         double min = 19.1;
@@ -549,7 +550,7 @@ public class HomePageTestCases {
                 .allMatch(s -> s.contains("EUR")));
     }
 
-    @Test(description = "Verify that User can log out from the system and log in with the same user credentials. HOMGEN-001(1)")
+    @Test(description = "Verify that User can log out from the system and log in with the same user credentials. HOMGEN-001(1)", priority = 27)
     public void logInAndLogOutWithTheSameCredentials() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.clickLogout();
@@ -560,12 +561,15 @@ public class HomePageTestCases {
         Assert.assertTrue(driver.findElement(By.xpath(unregisterButton)).isDisplayed());
     }
 
-    @Test(description = "Verify that User is able to unregister a User and can not log into the system with the same user credentials. HOMGEN-002")
+    @Test(description = "Verify that User is able to unregister a User and can not log into the system with the same user credentials. HOMGEN-002", priority = 28)
     public void unregister() {
         waitUntilElementIsDisplayed(By.xpath(unregisterButton));
         homePageCRA.clickUnregister();
         waitUntilElementIsDisplayed(By.xpath(registrationForm));
         Assert.assertTrue(driver.findElement(By.xpath(registrationForm)).isDisplayed());
+        homePageCRA.enterNameAndPassword("John1234", "John1234");
+        homePageCRA.clickLogIn();
+        Assert.assertTrue(driver.findElement(By.id("loginFailed")).isDisplayed());
     }
 
     @AfterMethod

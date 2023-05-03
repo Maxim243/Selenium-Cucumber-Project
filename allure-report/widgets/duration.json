@@ -1,1 +1,1 @@
-[]
+[{"uid":"52d193b1c574b00e","name":"loginWithNewCredentials[Maxim123, Maxim156](1)","time":{"duration":1281},"status":"passed","severity":"normal"},{"uid":"cf036d762f289ad4","name":"loginAnExistingUser[John1234, John1234](1)","time":{"duration":1282},"status":"passed","severity":"normal"},{"uid":"a1d246d13fa083c2","name":"loginWithAnExistingUsernameAndWrongPassword[John1234, Maxim156](1)","time":{"duration":1238},"status":"passed","severity":"normal"}]

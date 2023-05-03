@@ -1,16 +1,11 @@
 package org.example.pom;
 
 
-import org.example.PropertyReader;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 
-import java.io.File;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 
 public class Main {
@@ -70,12 +65,23 @@ public class Main {
         List<String> list = List.of("11.01.20", "12.02.2020");
         LocalDate localDateTo = LocalDate.parse(toDate, formatter1);
         LocalDate localDateFrom = LocalDate.parse(fromDate, formatter1);
-        System.out.println(list.stream()
-                .map(s -> LocalDate.parse(fromDate, formatter1))
-                .allMatch(localDate1 -> localDate1.isBefore(localDateTo) && localDate1.isAfter(localDateFrom)));
-        System.out.println(localDate);
+        String str = "";
+        str = str.concat("new");
+//        System.out.println(list.stream()
+//                .map(s -> LocalDate.parse(fromDate, formatter1))
+//                .allMatch(localDate1 -> localDate1.isBefore(localDateTo) && localDate1.isAfter(localDateFrom)));
+//        System.out.println(localDate);
 //        formatter1.format(localDate);
-
+//
+//        WebDriver driver1 = WebDriverManager.firefoxdriver().create();
+        System.out.println("hello");
+        System.out.println("hello");
+        System.out.println("hello");
+        System.out.println("hello");
+        WebDriver webDriver = WebDriverManager.operadriver().create();
+//        WebDriver driver = new OperaDriver();
+        webDriver.get("https://www.youtube.com");
+        System.out.println(webDriver.getTitle());
     }
 }
 

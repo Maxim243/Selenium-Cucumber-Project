@@ -6,13 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.example.tests.HomePageTestCases.webDriverWait;
-
-//import static org.example.tests.LoginTestCases.webDriverWait;
-
-//import static org.example.tests.RegistrationTestCases.webDriverWait;
-
-//import static org.example.ui.core.UITestBase.webDriverWait;
+import static org.example.tests.LoginTestCases.webDriverWait;
 
 public class UtilMethods {
 

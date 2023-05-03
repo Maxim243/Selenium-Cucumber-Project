@@ -1,4 +1,3 @@
-org\example\tests\AllTests.class
 org\example\ui\tests\registration\LimitedVersionTests.class
 org\example\ui\core\UITestBase.class
 org\example\ui\tests\registration\AllTests.class
